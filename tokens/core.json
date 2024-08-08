@@ -12,10 +12,10 @@
     "dimension": {
       "$type": "dimension",
       "1": {
-        "value": "1px"
+        "$value": "1px"
       },
       "2": {
-        "value": "2px"
+        "$value": "2px"
       }
     }
   }

@@ -4,7 +4,7 @@
   "description": "Experiments with Style Dictionary 4",
   "main": "index.js",
   "scripts": {
-    "build": "style-dictionary build -c ./sd.config.json"
+    "build": "style-dictionary build -c ./sd.config.json --verbose"
   },
   "author": "",
   "license": "ISC",

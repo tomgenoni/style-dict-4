@@ -1,0 +1,8 @@
+{
+  "dark": {
+    "$type": "color",
+    "bg": {
+      "$value": "{colors.black}"
+    }
+  }
+}

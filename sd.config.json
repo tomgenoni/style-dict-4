@@ -1,0 +1,29 @@
+{
+  "source": ["tokens/**/*.json"],
+  "platforms": {
+    "css": {
+      "prefix": "pdl",
+      "transformGroup": "css",
+      "files": [
+        {
+          "destination": "dist/light.css",
+          "format": "css/variables",
+          "filter": {
+            "attributes": {
+              "category": "light"
+            }
+          }
+        },
+        {
+          "destination": "dist/dark.css",
+          "format": "css/variables",
+          "filter": {
+            "attributes": {
+              "category": "dark"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

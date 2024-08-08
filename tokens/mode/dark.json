@@ -2,7 +2,7 @@
   "dark": {
     "$type": "color",
     "bg": {
-      "$value": "{colors.black}"
+      "$value": "{core.color.black}"
     }
   }
 }

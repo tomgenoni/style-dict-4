@@ -2,7 +2,7 @@
   "light": {
     "$type": "color",
     "bg": {
-      "$value": "{colors.white}"
+      "$value": "{core.color.white}"
     }
   }
 }

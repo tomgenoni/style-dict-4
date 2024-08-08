@@ -1,0 +1,22 @@
+{
+  "core": {
+    "color": {
+      "$type": "color",
+      "black": {
+        "$value": "#000"
+      },
+      "white": {
+        "$value": "#fff"
+      }
+    },
+    "dimension": {
+      "$type": "dimension",
+      "1": {
+        "value": "1px"
+      },
+      "2": {
+        "value": "2px"
+      }
+    }
+  }
+}

@@ -1,8 +1,6 @@
 {
-  "dark": {
-    "$type": "color",
-    "bg": {
-      "$value": "{core.color.black}"
-    }
+  "$type": "color",
+  "bg": {
+    "$value": "{core.color.black}"
   }
 }

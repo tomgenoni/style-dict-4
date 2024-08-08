@@ -2,7 +2,7 @@
   "comp": {
     "button": {
       "bg": {
-        "$value": "#000"
+        "$value": "{bg}"
       }
     }
   }

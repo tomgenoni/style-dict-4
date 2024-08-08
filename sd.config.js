@@ -1,5 +1,6 @@
 module.exports = {
-  source: ['tokens/**/*.json'],
+  source: ['tokens/mode/light.json'],
+  include: ['tokens/core.json'],
   platforms: {
     css: {
       prefix: 'pdl',
@@ -8,37 +9,8 @@ module.exports = {
         {
           destination: 'dist/light.css',
           format: 'css/variables',
-          filter: {
-            attributes: {
-              category: 'light',
-            },
-          },
-        },
-        {
-          destination: 'dist/dark.css',
-          format: 'css/variables',
-          filter: {
-            attributes: {
-              category: 'dark',
-            },
-          },
-        },
-        {
-          destination: 'dist/base.css',
-          format: 'css/variables',
-          filter: {
-            attributes: {
-              category: 'spacing',
-            },
-          },
-        },
-        {
-          destination: 'dist/comp.css',
-          format: 'css/variables',
-          filter: {
-            attributes: {
-              category: 'comp',
-            },
+          filter: async (token) => {
+            return token.filePath !== 'tokens/core.json';
           },
         },
       ],

@@ -1,49 +1,51 @@
 import StyleDictionary from 'style-dictionary';
 
-const base = new StyleDictionary({
-  source: ['tokens/dimension.json'],
-  include: ['tokens/core.json'],
-  platforms: {
-    css: {
-      prefix: 'pdl',
-      buildPath: 'dist/',
-      transformGroup: 'css',
-      files: [
-        {
-          destination: 'pdl-base.css',
-          format: 'css/variables',
-          filter: (token) => {
-            return token.attributes.category === 'dimension';
+function baseConfig() {
+  return {
+    source: ['tokens/dimension.json'],
+    include: ['tokens/core.json'],
+    platforms: {
+      css: {
+        prefix: 'pdl',
+        buildPath: 'dist/',
+        transformGroup: 'css',
+        files: [
+          {
+            destination: 'pdl-base.css',
+            format: 'css/variables',
+            filter: (token) => {
+              return token.attributes.category === 'dimension';
+            },
           },
-        },
-      ],
+        ],
+      },
     },
-  },
-});
+  };
+}
 
-const comp = new StyleDictionary({
-  source: ['tokens/comp/button.json'],
-  include: ['tokens/mode/light.json', 'tokens/dimension.json', 'tokens/core.json'],
-  platforms: {
-    css: {
-      prefix: 'pdl',
-      buildPath: 'dist/',
-      transformGroup: 'css',
-      files: [
-        {
-          destination: 'pdl-comp.css',
-          format: 'css/variables',
-          filter: (token) => {
-            return token.attributes.category === 'comp';
+function compConfig() {
+  return {
+    source: ['tokens/comp/*.json'],
+    include: ['tokens/**/*.json'],
+    platforms: {
+      css: {
+        prefix: 'pdl',
+        buildPath: 'dist/',
+        transformGroup: 'css',
+        files: [
+          {
+            destination: 'pdl-comp.css',
+            format: 'css/variables',
+            filter: (token) => token.attributes.category === 'comp',
+            options: {
+              outputReferences: true,
+            },
           },
-          options: {
-            outputReferences: true,
-          },
-        },
-      ],
+        ],
+      },
     },
-  },
-});
+  };
+}
 
 function modeConfigs(theme) {
   return {
@@ -67,6 +69,9 @@ function modeConfigs(theme) {
     },
   };
 }
+
+const base = new StyleDictionary(baseConfig());
+const comp = new StyleDictionary(compConfig());
 
 base.buildPlatform('css');
 comp.buildPlatform('css');

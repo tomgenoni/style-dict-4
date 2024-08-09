@@ -4,8 +4,9 @@
   "description": "Experiments with Style Dictionary 4",
   "main": "index.js",
   "scripts": {
-    "build": "style-dictionary build -c ./sd.config.js --verbose"
+    "build": "node build.js"
   },
+  "type": "module",
   "author": "",
   "license": "ISC",
   "devDependencies": {

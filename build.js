@@ -13,8 +13,8 @@ function baseConfig() {
           {
             destination: 'pdl-base.css',
             format: 'css/variables',
-            filter: (token) => {
-              return token.attributes.category === 'dimension';
+            filter: async (token) => {
+              return token.filePath.includes('dimension');
             },
           },
         ],
@@ -47,9 +47,9 @@ function compConfig() {
   };
 }
 
-function modeConfigs(theme) {
+function modeConfigs(mode) {
   return {
-    source: [`tokens/mode/${theme}.json`],
+    source: [`tokens/mode/${mode}.json`],
     include: ['tokens/core.json'],
     platforms: {
       css: {
@@ -58,10 +58,10 @@ function modeConfigs(theme) {
         transformGroup: 'css',
         files: [
           {
-            destination: `pdl-${theme}.css`,
+            destination: `pdl-${mode}.css`,
             format: 'css/variables',
             filter: async (token) => {
-              return token.filePath.includes(theme);
+              return token.filePath.includes(mode);
             },
           },
         ],
@@ -70,13 +70,16 @@ function modeConfigs(theme) {
   };
 }
 
+// Build light.css and dark.css
+['light', 'dark'].map(function (mode) {
+  const modes = new StyleDictionary(modeConfigs(mode));
+  modes.buildPlatform('css');
+});
+
+// Build base.css
 const base = new StyleDictionary(baseConfig());
 base.buildPlatform('css');
 
+// Build comp.css
 const comp = new StyleDictionary(compConfig());
 comp.buildPlatform('css');
-
-['light', 'dark'].map(function (theme) {
-  const modes = new StyleDictionary(modeConfigs(theme));
-  modes.buildPlatform('css');
-});

@@ -1,13 +1,11 @@
 {
-  "dimension": {
-    "spacing": {
-      "$type": "spacing",
-      "sm": {
-        "$value": "{core.dimension.1}"
-      },
-      "md": {
-        "$value": "{core.dimension.2}"
-      }
+  "spacing": {
+    "$type": "spacing",
+    "sm": {
+      "$value": "{dimension.1}"
+    },
+    "md": {
+      "$value": "{dimension.2}"
     }
   }
 }

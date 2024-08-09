@@ -1,6 +1,6 @@
 {
   "$type": "color",
   "bg": {
-    "$value": "{core.color.white}"
+    "$value": "{color.white}"
   }
 }

@@ -9,8 +9,8 @@ module.exports = {
         {
           destination: 'dist/light.css',
           format: 'css/variables',
-          filter: async (token) => {
-            return token.filePath !== 'tokens/core.json';
+          filter: {
+            $type: 'color',
           },
         },
       ],

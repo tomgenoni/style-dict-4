@@ -1,22 +1,20 @@
 {
-  "core": {
-    "color": {
-      "$type": "color",
-      "black": {
-        "$value": "#000"
-      },
-      "white": {
-        "$value": "#fff"
-      }
+  "color": {
+    "$type": "color",
+    "black": {
+      "$value": "#000"
     },
-    "dimension": {
-      "$type": "dimension",
-      "1": {
-        "$value": "1px"
-      },
-      "2": {
-        "$value": "2px"
-      }
+    "white": {
+      "$value": "#fff"
+    }
+  },
+  "dimension": {
+    "$type": "dimension",
+    "1": {
+      "$value": "1px"
+    },
+    "2": {
+      "$value": "2px"
     }
   }
 }

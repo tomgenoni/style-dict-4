@@ -12,31 +12,38 @@ const base = new StyleDictionary({
         {
           destination: 'pdl-base.css',
           format: 'css/variables',
+          filter: (token) => {
+            return token.attributes.category === 'dimension';
+          },
         },
       ],
     },
   },
 });
 
-// const comp = new StyleDictionary({
-//   source: ['tokens/dimension.json', 'tokens/core.json', 'tokens/comp/*.json'],
-//   platforms: {
-//     css: {
-//       prefix: 'pdl',
-//       buildPath: 'dist/',
-//       transformGroup: 'css',
-//       files: [
-//         {
-//           destination: 'pdl-comp.css',
-//           format: 'css/variables',
-//           filter: (token) => {
-//             return token.attributes.category === 'comp';
-//           },
-//         },
-//       ],
-//     },
-//   },
-// });
+const comp = new StyleDictionary({
+  source: ['tokens/comp/button.json'],
+  include: ['tokens/mode/light.json', 'tokens/dimension.json', 'tokens/core.json'],
+  platforms: {
+    css: {
+      prefix: 'pdl',
+      buildPath: 'dist/',
+      transformGroup: 'css',
+      files: [
+        {
+          destination: 'pdl-comp.css',
+          format: 'css/variables',
+          filter: (token) => {
+            return token.attributes.category === 'comp';
+          },
+          options: {
+            outputReferences: true,
+          },
+        },
+      ],
+    },
+  },
+});
 
 function modeConfigs(theme) {
   return {
@@ -62,7 +69,7 @@ function modeConfigs(theme) {
 }
 
 base.buildPlatform('css');
-// comp.buildPlatform('css');
+comp.buildPlatform('css');
 
 ['light', 'dark'].map(function (theme) {
   const modes = new StyleDictionary(modeConfigs(theme));

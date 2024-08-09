@@ -71,9 +71,9 @@ function modeConfigs(theme) {
 }
 
 const base = new StyleDictionary(baseConfig());
-const comp = new StyleDictionary(compConfig());
-
 base.buildPlatform('css');
+
+const comp = new StyleDictionary(compConfig());
 comp.buildPlatform('css');
 
 ['light', 'dark'].map(function (theme) {

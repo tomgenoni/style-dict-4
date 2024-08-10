@@ -2,7 +2,7 @@
   "comp": {
     "banner": {
       "bg": {
-        "$value": "{bg}"
+        "$value": "{bg.base}"
       }
     }
   }

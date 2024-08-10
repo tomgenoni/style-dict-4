@@ -1,5 +1,19 @@
 import StyleDictionary from 'style-dictionary';
 
+// Swap out the fontFamily token used in Figma to the value with the web font stack
+StyleDictionary.registerTransform({
+  name: 'local/swapFontFamily',
+  type: 'name',
+  filter: function (token) {
+    if (token.$type === 'fontFamily' && token.filePath.includes('core')) {
+      return token;
+    }
+  },
+  transform: function (token) {
+    return (token.$value = 'var(--pdl-font-family-web)');
+  },
+});
+
 function baseConfig() {
   return {
     source: ['tokens/dimension.json'],
@@ -7,6 +21,7 @@ function baseConfig() {
     platforms: {
       css: {
         prefix: 'pdl',
+        transforms: ['size/pxToRem', 'local/swapFontFamily'],
         buildPath: 'dist/',
         transformGroup: 'css',
         files: [

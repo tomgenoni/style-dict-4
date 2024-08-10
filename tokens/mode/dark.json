@@ -1,6 +1,294 @@
 {
-  "$type": "color",
   "bg": {
-    "$value": "{color.black}"
+    "$type": "color",
+    "base": {
+      "$value": "{color.gray.12}"
+    },
+    "faint": {
+      "$value": "{color.gray.11}"
+    },
+    "subtle": {
+      "$value": "{color.gray.10}"
+    },
+    "muted": {
+      "$value": "{color.gray.9}"
+    },
+    "emphasis": {
+      "$value": "{color.gray.8}"
+    },
+    "reverse": {
+      "$value": "{color.white}"
+    },
+    "backdrop": {
+      "$value": "rgba( {color.black} , .75)",
+      "$description": "Used for the full-screen background behind modals."
+    }
+  },
+  "fg": {
+    "$type": "color",
+    "base": {
+      "$value": "{color.white}"
+    },
+    "muted": {
+      "$value": "{color.gray.5}"
+    },
+    "subtle": {
+      "$value": "{color.gray.7}"
+    },
+    "reverse": {
+      "$value": "{color.black}"
+    }
+  },
+  "border": {
+    "$type": "color",
+    "base": {
+      "$value": "{color.gray.10}"
+    },
+    "emphasis": {
+      "$value": "{color.gray.9}"
+    }
+  },
+  "accent": {
+    "$type": "color",
+    "base": {
+      "$value": "{color.purple.7}"
+    },
+    "faint": {
+      "$value": "{color.purple.10}"
+    },
+    "subtle": {
+      "$value": "{color.purple.9}"
+    },
+    "muted": {
+      "$value": "{color.purple.8}"
+    },
+    "emphasis": {
+      "$value": "{color.purple.6}"
+    },
+    "bold": {
+      "$value": "{color.purple.3}"
+    },
+    "on-accent": {
+      "$value": "{color.white}"
+    }
+  },
+  "warning": {
+    "$type": "color",
+    "base": {
+      "$value": "{color.yellow.5}"
+    },
+    "faint": {
+      "$value": "{color.yellow.11}"
+    },
+    "subtle": {
+      "$value": "{color.yellow.9}"
+    },
+    "muted": {
+      "$value": "{color.yellow.7}"
+    },
+    "emphasis": {
+      "$value": "{color.yellow.6}"
+    },
+    "on-warning": {
+      "$value": "{color.black}"
+    }
+  },
+  "error": {
+    "$type": "color",
+    "base": {
+      "$value": "{color.red.5}"
+    },
+    "faint": {
+      "$value": "{color.red.11}"
+    },
+    "subtle": {
+      "$value": "{color.red.9}"
+    },
+    "muted": {
+      "$value": "{color.red.7}"
+    },
+    "emphasis": {
+      "$value": "{color.red.4}"
+    },
+    "on-error": {
+      "$value": "{color.black}"
+    }
+  },
+  "success": {
+    "$type": "color",
+    "base": {
+      "$value": "{color.green.5}"
+    },
+    "faint": {
+      "$value": "{color.green.11}"
+    },
+    "muted": {
+      "$value": "{color.green.7}"
+    },
+    "emphasis": {
+      "$value": "{color.green.5}"
+    },
+    "on-success": {
+      "$value": "{color.black}"
+    }
+  },
+  "action": {
+    "default": {
+      "$type": "color",
+      "bg": {
+        "$value": "{color.gray.12}"
+      },
+      "fg-placeholder": {
+        "$value": "{color.gray.7}"
+      },
+      "fg": {
+        "$value": "{color.white}"
+      },
+      "border": {
+        "$value": "{color.gray.8}"
+      }
+    },
+    "hover": {
+      "$type": "color",
+      "border": {
+        "$value": "{color.gray.7}"
+      },
+      "border-accent": {
+        "$value": "{color.purple.8}"
+      }
+    },
+    "disabled": {
+      "$type": "color",
+      "bg": {
+        "$value": "{color.gray.12}"
+      },
+      "fg": {
+        "$value": "{color.gray.8}"
+      },
+      "border": {
+        "$value": "{color.gray.10}"
+      }
+    },
+    "error": {
+      "$type": "color",
+      "bg": {
+        "$value": "{color.gray.12}"
+      },
+      "fg": {
+        "$value": "{color.white}"
+      },
+      "border": {
+        "$value": "{color.red.6}"
+      }
+    },
+    "checked": {
+      "$type": "color",
+      "bg": {
+        "$value": "{accent.emphasis}"
+      },
+      "fg": {
+        "$value": "{color.white}"
+      },
+      "border": {
+        "$value": "{accent.emphasis}"
+      },
+      "disabled": {
+        "bg": {
+          "$value": "{color.purple.10}"
+        },
+        "fg": {
+          "$value": "{color.purple.8}"
+        },
+        "border": {
+          "$value": "{color.purple.8}"
+        }
+      }
+    },
+    "focus-ring": {
+      "primary": {
+        "base": {
+          "$type": "shadow",
+          "$value": {
+            "offsetX": "0",
+            "offsetY": "0",
+            "blur": "0",
+            "spread": "2",
+            "color": "{accent.base}"
+          },
+          "$description": "Focus ring for action elements"
+        },
+        "outer": {
+          "$type": "shadow",
+          "$value": [
+            {
+              "offsetX": "0",
+              "offsetY": "0",
+              "blur": "0",
+              "spread": "2",
+              "color": "{bg.base}"
+            },
+            {
+              "offsetX": "0",
+              "offsetY": "0",
+              "blur": "0",
+              "spread": "4",
+              "color": "{accent.base}"
+            }
+          ],
+          "$description": "Focus ring for action elements with full accent color"
+        }
+      },
+      "danger": {
+        "base": {
+          "$type": "shadow",
+          "$value": {
+            "offsetX": "0",
+            "offsetY": "0",
+            "blur": "0",
+            "spread": "2",
+            "color": "{error.base}"
+          },
+          "$description": "Focus ring for action danger/error elements"
+        }
+      }
+    }
+  },
+  "link": {
+    "$type": "color",
+    "theme": {
+      "primary": {
+        "default": {
+          "fg": {
+            "$value": "{color.purple.4}"
+          }
+        }
+      },
+      "danger": {
+        "default": {
+          "fg": {
+            "$value": "{error.emphasis}"
+          }
+        }
+      }
+    },
+    "disabled": {
+      "fg": {
+        "$value": "{action.disabled.fg}"
+      }
+    }
+  },
+  "boxShadow": {
+    "$type": "boxShadow",
+    "base": {
+      "$type": "shadow",
+      "$value": {
+        "offsetX": "0",
+        "offsetY": "0",
+        "blur": "6",
+        "spread": "1",
+        "color": "rgba(0,0,0,0.1)"
+      },
+      "$description": "Default shadow"
+    }
   }
 }

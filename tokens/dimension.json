@@ -1,11 +1,336 @@
 {
-  "spacing": {
-    "$type": "spacing",
+  "fontFamily": {
+    "$type": "fontFamily",
+    "web": {
+      "$value": "-apple-system,system-ui,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+    }
+  },
+  "fontFamilies": {
+    "$type": "typography",
+    "bodyText": {
+      "xx-sm": {
+        "normal": {
+          "$value": {
+            "fontFamily": "{fontFamily.figma}",
+            "fontWeight": "{fontWeights.normal}",
+            "fontSize": "{fontSizes.xx-sm}",
+            "lineHeight": "{lineHeights.text.xx-sm}"
+          }
+        },
+        "semibold": {
+          "$value": {
+            "fontFamily": "{fontFamily.figma}",
+            "fontWeight": "{fontWeights.semibold}",
+            "fontSize": "{fontSizes.xx-sm}",
+            "lineHeight": "{lineHeights.text.xx-sm}"
+          }
+        },
+        "bold": {
+          "$value": {
+            "fontFamily": "{fontFamily.figma}",
+            "fontWeight": "{fontWeights.bold}",
+            "fontSize": "{fontSizes.xx-sm}",
+            "lineHeight": "{lineHeights.text.xx-sm}"
+          }
+        }
+      },
+      "x-sm": {
+        "normal": {
+          "$value": {
+            "fontFamily": "{fontFamily.figma}",
+            "fontWeight": "{fontWeights.normal}",
+            "fontSize": "{fontSizes.x-sm}",
+            "lineHeight": "{lineHeights.text.x-sm}"
+          }
+        },
+        "semibold": {
+          "$value": {
+            "fontFamily": "{fontFamily.figma}",
+            "fontWeight": "{fontWeights.semibold}",
+            "fontSize": "{fontSizes.x-sm}",
+            "lineHeight": "{lineHeights.text.x-sm}"
+          }
+        },
+        "bold": {
+          "$value": {
+            "fontFamily": "{fontFamily.figma}",
+            "fontWeight": "{fontWeights.bold}",
+            "fontSize": "{fontSizes.x-sm}",
+            "lineHeight": "{lineHeights.text.x-sm}"
+          }
+        }
+      },
+      "sm": {
+        "normal": {
+          "$value": {
+            "fontFamily": "{fontFamily.figma}",
+            "fontWeight": "{fontWeights.normal}",
+            "fontSize": "{fontSizes.sm}",
+            "lineHeight": "{lineHeights.text.sm}"
+          }
+        },
+        "semibold": {
+          "$value": {
+            "fontFamily": "{fontFamily.figma}",
+            "fontWeight": "{fontWeights.semibold}",
+            "fontSize": "{fontSizes.sm}",
+            "lineHeight": "{lineHeights.text.sm}"
+          }
+        },
+        "bold": {
+          "$value": {
+            "fontFamily": "{fontFamily.figma}",
+            "fontWeight": "{fontWeights.bold}",
+            "fontSize": "{fontSizes.sm}",
+            "lineHeight": "{lineHeights.text.sm}"
+          }
+        }
+      },
+      "base": {
+        "normal": {
+          "$value": {
+            "fontFamily": "{fontFamily.figma}",
+            "fontWeight": "{fontWeights.normal}",
+            "fontSize": "{fontSizes.md}",
+            "lineHeight": "{lineHeights.text.base}"
+          }
+        },
+        "semibold": {
+          "$value": {
+            "fontFamily": "{fontFamily.figma}",
+            "fontWeight": "{fontWeights.semibold}",
+            "fontSize": "{fontSizes.md}",
+            "lineHeight": "{lineHeights.text.base}"
+          }
+        },
+        "bold": {
+          "$value": {
+            "fontFamily": "{fontFamily.figma}",
+            "fontWeight": "{fontWeights.bold}",
+            "fontSize": "{fontSizes.md}",
+            "lineHeight": "{lineHeights.text.base}"
+          }
+        }
+      }
+    },
+    "heading": {
+      "base": {
+        "bold": {
+          "$value": {
+            "fontFamily": "{fontFamily.figma}",
+            "fontWeight": "{fontWeights.bold}",
+            "fontSize": "{fontSizes.lg}",
+            "lineHeight": "{lineHeights.heading.base}"
+          }
+        }
+      },
+      "md": {
+        "bold": {
+          "$value": {
+            "fontFamily": "{fontFamily.figma}",
+            "fontWeight": "{fontWeights.bold}",
+            "fontSize": "{fontSizes.x-lg}",
+            "lineHeight": "{lineHeights.heading.md}"
+          }
+        }
+      }
+    },
+    "metaText": {
+      "$value": {
+        "fontFamily": "{fontFamily.figma}",
+        "fontWeight": "{fontWeights.normal}",
+        "fontSize": "{fontSizes.xx-sm}",
+        "lineHeight": "{lineHeights.text.xx-sm}"
+      },
+      "$description": "Small text for descriptions"
+    }
+  },
+  "fontSizes": {
+    "$type": "dimension",
+    "xx-sm": {
+      "$value": "11px"
+    },
+    "x-sm": {
+      "$value": "12px"
+    },
     "sm": {
-      "$value": "{dimension.1}"
+      "$value": "14px"
     },
     "md": {
+      "$value": "16px"
+    },
+    "lg": {
+      "$value": "18px"
+    },
+    "x-lg": {
+      "$value": "20px"
+    }
+  },
+  "fontWeights": {
+    "$type": "other",
+    "normal": {
+      "$value": "400"
+    },
+    "semibold": {
+      "$value": "600"
+    },
+    "bold": {
+      "$value": "700"
+    }
+  },
+  "lineHeights": {
+    "$type": "dimension",
+    "text": {
+      "xx-sm": {
+        "$value": "15.4px"
+      },
+      "x-sm": {
+        "$value": "16.8px"
+      },
+      "sm": {
+        "$value": "19.6px"
+      },
+      "base": {
+        "$value": "22.4px"
+      }
+    },
+    "heading": {
+      "base": {
+        "$value": "25.2px"
+      },
+      "md": {
+        "$value": "28px"
+      }
+    }
+  },
+  "motion": {
+    "$type": "other",
+    "duration": {
+      "fast": {
+        "$value": "150ms"
+      }
+    }
+  },
+  "sizing": {
+    "icon": {
+      "$type": "dimension",
+      "x-sm": {
+        "$value": "{dimension.7}"
+      },
+      "sm": {
+        "$value": "18px"
+      },
+      "md": {
+        "$value": "{dimension.9}"
+      },
+      "lg": {
+        "$value": "{dimension.10}"
+      },
+      "x-lg": {
+        "$value": "{dimension.11}"
+      }
+    },
+    "image": {
+      "$type": "dimension",
+      "x-sm": {
+        "$value": "{dimension.9}"
+      },
+      "sm": {
+        "$value": "{dimension.12}"
+      },
+      "md": {
+        "$value": "{dimension.16}"
+      },
+      "lg": {
+        "$value": "{dimension.22}"
+      },
+      "x-lg": {
+        "$value": "{dimension.29}"
+      }
+    },
+    "input": {
+      "$type": "dimension",
+      "height": {
+        "sm": {
+          "$value": "{dimension.8}"
+        },
+        "md": {
+          "$value": "{dimension.10}"
+        },
+        "lg": {
+          "$value": "{dimension.12}"
+        },
+        "x-lg": {
+          "$value": "{dimension.14}"
+        },
+        "xx-lg": {
+          "$value": "{dimension.22}"
+        }
+      }
+    },
+    "radius": {
+      "$type": "dimension",
+      "none": {
+        "$value": "0"
+      },
+      "x-sm": {
+        "$value": "{dimension.2}"
+      },
+      "sm": {
+        "$value": "{dimension.3}"
+      },
+      "md": {
+        "$value": "{dimension.5}"
+      },
+      "lg": {
+        "$value": "{dimension.7}"
+      },
+      "pill": {
+        "$type": "other",
+        "$value": "9999px"
+      },
+      "circle": {
+        "$description": "This doesn't work on native platforms",
+        "$value": "50%"
+      }
+    },
+    "border": {
+      "$type": "borderWidth",
+      "width": {
+        "base": {
+          "$value": "1px"
+        }
+      }
+    }
+  },
+  "spacing": {
+    "$type": "dimension",
+    "xxx-sm": {
       "$value": "{dimension.2}"
+    },
+    "xx-sm": {
+      "$value": "{dimension.3}"
+    },
+    "x-sm": {
+      "$value": "{dimension.5}"
+    },
+    "sm": {
+      "$value": "{dimension.7}"
+    },
+    "md": {
+      "$value": "{dimension.8}"
+    },
+    "lg": {
+      "$value": "{dimension.9}"
+    },
+    "x-lg": {
+      "$value": "{dimension.10}"
+    },
+    "xx-lg": {
+      "$value": "{dimension.12}"
+    },
+    "xxx-lg": {
+      "$value": "{dimension.14}"
     }
   }
 }

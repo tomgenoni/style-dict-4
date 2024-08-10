@@ -33,6 +33,7 @@
     }
   },
   "dimension": {
+    "$type": "dimension",
     "1": {
       "$value": "1px"
     },
@@ -119,8 +120,7 @@
     },
     "29": {
       "$value": "100px"
-    },
-    "$type": "dimension"
+    }
   },
   "color": {
     "$type": "color",

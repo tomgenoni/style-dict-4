@@ -1,0 +1,83 @@
+{
+  "comp": {
+    "attachment": {
+      "closeButton": {
+        "fg": {
+          "$value": "{fg.base}",
+          "$type": "color"
+        },
+        "bg": {
+          "$value": "{bg.base}",
+          "$type": "color"
+        },
+        "dimension": {
+          "$value": "{sizing.input.height.lg}",
+          "$type": "sizing"
+        },
+        "border": {
+          "$type": "color",
+          "color": {
+            "$value": "{border.base}"
+          }
+        },
+        "borderRadius": {
+          "$value": "{sizing.radius.circle}",
+          "$type": "borderRadius"
+        }
+      },
+      "image": {
+        "border": {
+          "$type": "color",
+          "color": {
+            "$value": "{border.base}"
+          }
+        },
+        "borderRadius": {
+          "$value": "{sizing.radius.lg}",
+          "$type": "borderRadius"
+        }
+      },
+      "file": {
+        "fg": {
+          "$value": "{fg.base}",
+          "$type": "color"
+        },
+        "bg": {
+          "$value": "{bg.faint}",
+          "$type": "color"
+        },
+        "borderRadius": {
+          "$value": "{sizing.radius.lg}",
+          "$type": "borderRadius"
+        },
+        "padding": {
+          "$type": "color",
+          "left": {
+            "$value": "{spacing.x-sm}"
+          },
+          "right": {
+            "$value": "{spacing.md}"
+          }
+        },
+        "border": {
+          "$type": "color",
+          "color": {
+            "$value": "{border.base}"
+          }
+        },
+        "content": {
+          "$type": "spacing",
+          "gap": {
+            "$value": "{spacing.xx-sm}"
+          }
+        },
+        "data": {
+          "$type": "color",
+          "fg": {
+            "$value": "{fg.subtle}"
+          }
+        }
+      }
+    }
+  }
+}

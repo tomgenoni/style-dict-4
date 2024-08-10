@@ -245,7 +245,7 @@
             "spread": "2",
             "color": "{error.base}"
           },
-          "$description": "Focus ring for action danger/error elemments"
+          "$description": "Focus ring for action danger/error elements"
         }
       }
     }

@@ -1,8 +1,27 @@
 import StyleDictionary from 'style-dictionary';
+import { fileHeader, formattedVariables } from 'style-dictionary/utils';
+
+StyleDictionary.registerFormat({
+  name: 'customFormat',
+  format: async function ({ dictionary, file, options }) {
+    const { outputReferences, usesDtcg } = options;
+    return (
+      (await fileHeader({ file })) +
+      ':root,\n.force-light {\n' +
+      formattedVariables({
+        format: 'css',
+        dictionary,
+        outputReferences,
+        usesDtcg,
+      }) +
+      '\n}\n'
+    );
+  },
+});
 
 // Swap out the fontFamily token used in Figma to the value with the web font stack
 StyleDictionary.registerTransform({
-  name: 'local/swapFontFamily',
+  name: 'custom/swapFontFamily',
   type: 'name',
   filter: function (token) {
     if (token.$type === 'fontFamily' && token.filePath.includes('core')) {
@@ -21,13 +40,13 @@ function baseConfig() {
     platforms: {
       css: {
         prefix: 'pdl',
-        transforms: ['size/pxToRem', 'local/swapFontFamily'],
+        transforms: ['size/pxToRem', 'custom/swapFontFamily'],
         buildPath: 'dist/',
         transformGroup: 'css',
         files: [
           {
             destination: 'pdl-base.css',
-            format: 'css/variables',
+            format: 'customFormat',
             filter: async (token) => {
               return token.filePath.includes('dimension');
             },

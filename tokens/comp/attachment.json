@@ -51,7 +51,7 @@
           "$type": "borderRadius"
         },
         "padding": {
-          "$type": "color",
+          "$type": "spacing",
           "left": {
             "$value": "{spacing.x-sm}"
           },

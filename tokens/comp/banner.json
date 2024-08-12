@@ -2,7 +2,8 @@
   "comp": {
     "banner": {
       "bg": {
-        "$value": "{bg.base}"
+        "$value": "{bg.base}",
+        "$type": "color"
       }
     }
   }

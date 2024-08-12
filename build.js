@@ -38,7 +38,7 @@ StyleDictionary.registerFormat({
 });
 
 StyleDictionary.registerFormat({
-  name: 'custom/compColorHeader',
+  name: 'custom/componentColorHeader',
   format: async function ({ dictionary, file, options }) {
     const { outputReferences, usesDtcg } = options;
     return (
@@ -69,16 +69,20 @@ StyleDictionary.registerTransform({
   },
 });
 
+const commonOptions = {
+  prefix: 'pdl',
+  buildPath: 'dist/',
+  transformGroup: 'css',
+};
+
 function baseConfig() {
   return {
     source: ['tokens/dimension.json'],
     include: ['tokens/core.json'],
     platforms: {
       css: {
-        prefix: 'pdl',
+        ...commonOptions,
         transforms: ['size/pxToRem', 'custom/swapFontFamily'],
-        buildPath: 'dist/',
-        transformGroup: 'css',
         files: [
           {
             destination: 'pdl-base.css',
@@ -93,18 +97,16 @@ function baseConfig() {
   };
 }
 
-function compConfig() {
+function componentConfig() {
   return {
     source: ['tokens/comp/*.json'],
     include: ['tokens/**/*.json'],
     platforms: {
       css: {
-        prefix: 'pdl',
-        buildPath: 'dist/',
-        transformGroup: 'css',
+        ...commonOptions,
         files: [
           {
-            destination: 'pdl-comp.css',
+            destination: 'pdl-components.css',
             format: 'css/variables',
             filter: (token) => token.attributes.category === 'comp' && token.$type !== 'color',
             options: {
@@ -117,19 +119,17 @@ function compConfig() {
   };
 }
 
-function compColorConfig() {
+function componentColorConfig() {
   return {
     source: ['tokens/comp/*.json'],
     include: ['tokens/**/*.json'],
     platforms: {
       css: {
-        prefix: 'pdl',
-        buildPath: 'dist/',
-        transformGroup: 'css',
+        ...commonOptions,
         files: [
           {
-            destination: 'pdl-comp-color.css',
-            format: 'custom/compColorHeader',
+            destination: 'pdl-components-color.css',
+            format: 'custom/componentColorHeader',
             filter: (token) => token.attributes.category === 'comp' && token.$type === 'color',
             options: {
               outputReferences: true,
@@ -142,21 +142,16 @@ function compColorConfig() {
 }
 
 function modeConfigs(mode) {
-  const modeFormat = mode === 'light' ? 'custom/lightHeader' : 'custom/darkHeader';
-  console.log(modeFormat);
-
   return {
     source: [`tokens/mode/${mode}.json`],
     include: ['tokens/core.json'],
     platforms: {
       css: {
-        prefix: 'pdl',
-        buildPath: 'dist/',
-        transformGroup: 'css',
+        ...commonOptions,
         files: [
           {
             destination: `pdl-${mode}.css`,
-            format: modeFormat,
+            format: `custom/${mode}Header`,
             filter: async (token) => {
               return token.filePath.includes(mode);
             },
@@ -170,17 +165,21 @@ function modeConfigs(mode) {
 // Build light.css and dark.css
 ['light', 'dark'].map(function (mode) {
   const modes = new StyleDictionary(modeConfigs(mode));
-  modes.buildPlatform('css');
+  modes.cleanAllPlatforms();
+  modes.buildAllPlatforms();
 });
 
 // Build base.css
 const base = new StyleDictionary(baseConfig());
-base.buildPlatform('css');
+base.cleanAllPlatforms();
+base.buildAllPlatforms();
 
-// Build comp.css
-const comp = new StyleDictionary(compConfig());
-comp.buildPlatform('css');
+// Build components.css
+const component = new StyleDictionary(componentConfig());
+component.cleanAllPlatforms();
+component.buildAllPlatforms();
 
-// Build comp-color.css
-const compColor = new StyleDictionary(compColorConfig());
-compColor.buildPlatform('css');
+// Build components-color.css
+const componentColor = new StyleDictionary(componentColorConfig());
+componentColor.cleanAllPlatforms();
+componentColor.buildAllPlatforms();
